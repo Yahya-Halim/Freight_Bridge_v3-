@@ -1,0 +1,145 @@
+---
+import Base from '@engine/layouts/Base.astro';
+import { getEntry, getCollection } from 'astro:content';
+
+const businessEntry = await getEntry('business', 'biz');
+const business = businessEntry?.data;
+const services = await getCollection('services');
+
+const iconMap: Record<string, string> = {
+  'residential-moving': '🚚',
+  'commercial-moving': '🏢',
+  'freight-hauling': '🚛',
+};
+
+const title = business?.name ?? 'Welcome';
+const description = business?.description ?? '';
+---
+
+<Base title={title} description={description}>
+  <section class="hero">
+    <h1>{title}</h1>
+    {business?.slogan && <p class="tagline">{business.slogan}</p>}
+    <p class="description">
+      A trusted moving and nationwide freight hauling team based in {business?.address.city}, {business?.address.state}.
+      Licensed interstate carrier — USDOT 4414774 · MC-1734786.
+    </p>
+    <div class="hero-cta">
+      <a href="/contact" class="cta-btn primary">Get a Quote</a>
+      <a href={`tel:${business?.phone}`} class="cta-btn secondary">Call {business?.phone}</a>
+    </div>
+  </section>
+
+  <section class="services">
+    <h2>What We Do</h2>
+    <div class="service-grid">
+      {services.map((service) => (
+        <a href={`/services/${service.data.slug}`} class="service-card">
+          <span class="service-icon">{iconMap[service.data.slug] ?? '📦'}</span>
+          <h3>{service.data.name}</h3>
+          <p>{service.data.description}</p>
+          <span class="learn-more">Learn More →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="datacenter">
+    <h2>Data Center Hauling</h2>
+    <p class="dc-subtitle">Post-construction debris removal and equipment hauling for Iowa's data center corridor.</p>
+    <div class="dc-cards">
+      <a href="/services/data-center-iowa-city" class="dc-card">
+        <h3>Iowa City Corridor</h3>
+        <p>Debris removal, equipment hauling, and site cleanup in Iowa City, Coralville, and North Liberty.</p>
+        <span class="learn-more">Learn More →</span>
+      </a>
+      <a href="/services/data-center-cedar-rapids" class="dc-card">
+        <h3>Cedar Rapids</h3>
+        <p>Serving Big Cedar Industrial Center and the I-380 corridor with a careful, professional hauling crew.</p>
+        <span class="learn-more">Learn More →</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="why-us">
+    <h2>Why Freight Bridge?</h2>
+    <div class="reasons">
+      <div class="reason">
+        <strong>A team you can trust</strong>
+        <p>Our experienced crew handles your move and every haul with care. No call centers, no runaround.</p>
+      </div>
+      <div class="reason">
+        <strong>Licensed interstate carrier</strong>
+        <p>USDOT 4414774, MC-1734786 — we can legally move you across state lines, not just locally.</p>
+      </div>
+      <div class="reason">
+        <strong>Moving and freight under one roof</strong>
+        <p>Need a household move, a data-center haul, or freight covered across the country? We do it all.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Ready to get moving?</h2>
+    <p>Tell us what you need and we'll get you a straight quote — fast.</p>
+    <div class="cta-buttons">
+      <a href="/contact" class="cta-btn primary">Get a Quote</a>
+      <a href={`tel:${business?.phone}`} class="cta-btn secondary">Call {business?.phone}</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero { padding: 4rem 0 2rem; text-align: center; }
+  h1 { font-size: 2.75rem; margin: 0 0 1rem; color: #1e3a8a; }
+  .tagline { font-size: 1.35rem; color: #2563eb; font-weight: 600; margin: 0 0 1rem; }
+  .description { max-width: 42rem; margin: 0 auto 2rem; line-height: 1.7; color: #374151; font-size: 1.1rem; }
+  .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  h2 { font-size: 1.75rem; color: #111827; margin: 0 0 1.5rem; }
+
+  .cta-btn {
+    display: inline-block; padding: 0.75rem 2rem; border-radius: 0.5rem;
+    text-decoration: none; font-weight: 600;
+  }
+  .cta-btn.primary { background: #2563eb; color: white; }
+  .cta-btn.primary:hover { background: #1e40af; }
+  .cta-btn.secondary { background: transparent; color: #2563eb; border: 2px solid #2563eb; }
+
+  .services { padding: 3rem 0; }
+  .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+  .service-card {
+    display: block; padding: 2rem; border: 1px solid #e5e7eb; border-radius: 0.75rem;
+    text-decoration: none; color: inherit; transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .service-card:hover { border-color: #2563eb; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1); }
+  .service-icon { font-size: 2.5rem; display: block; margin-bottom: 1rem; }
+  .service-card h3 { font-size: 1.25rem; margin: 0 0 0.75rem; color: #1e3a8a; }
+  .service-card p { color: #6b7280; line-height: 1.6; margin: 0 0 1rem; font-size: 0.95rem; }
+  .learn-more { color: #2563eb; font-weight: 600; font-size: 0.9rem; }
+
+  .datacenter { padding: 3rem 0; }
+  .dc-subtitle { color: #6b7280; font-size: 1.1rem; margin: -1rem 0 2rem; }
+  .dc-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+  .dc-card {
+    display: block; padding: 2rem; border: 1px solid #e5e7eb; border-radius: 0.75rem;
+    text-decoration: none; color: inherit; background: #f0f9ff; transition: border-color 0.2s, transform 0.2s;
+  }
+  .dc-card:hover { border-color: #2563eb; transform: translateY(-2px); }
+  .dc-card h3 { font-size: 1.35rem; margin: 0 0 0.75rem; color: #1e3a8a; }
+  .dc-card p { color: #374151; line-height: 1.6; margin: 0 0 1rem; font-size: 0.95rem; }
+
+  .why-us { padding: 3rem 0; }
+  .reasons { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+  .reason { padding: 1.5rem; background: #f9fafb; border-radius: 0.5rem; border-left: 4px solid #2563eb; }
+  .reason strong { display: block; margin-bottom: 0.5rem; color: #111827; }
+  .reason p { margin: 0; color: #374151; font-size: 0.9rem; line-height: 1.5; }
+
+  .cta-section {
+    text-align: center; padding: 3rem 2rem; background: #1e3a8a; color: white;
+    border-radius: 1rem; margin: 2rem 0;
+  }
+  .cta-section h2 { color: white; }
+  .cta-section p { opacity: 0.9; margin: 0 0 1.5rem; font-size: 1.1rem; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .cta-section .cta-btn.secondary { color: white; border-color: white; }
+</style>

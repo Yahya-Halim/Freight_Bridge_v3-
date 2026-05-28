@@ -1,0 +1,72 @@
+/* Dropdown Navigation Styles */
+.relative.group {
+  position: relative;
+  display: inline-block;
+}
+
+.group button {
+  transition: color 0.2s ease-in-out;
+  color: #374151; /* gray-700 */
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.group button:hover {
+  color: #2563eb; /* blue-600 */
+}
+
+/* Dropdown menu */
+.group .dropdown-menu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  margin-top: 0.5rem;
+  width: 12rem;
+  background-color: white;
+  border-radius: 0.375rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  padding: 0.25rem 0;
+  z-index: 10;
+  display: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Active state for click */
+.group.active .dropdown-menu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dropdown menu items */
+.dropdown-menu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  color: #374151; /* gray-700 */
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: #eff6ff; /* blue-50 */
+  color: #2563eb; /* blue-600 */
+}
+
+/* Chevron icon */
+.group button .chevron {
+  margin-left: 0.25rem;
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+.group.active button .chevron {
+  transform: rotate(180deg);
+}

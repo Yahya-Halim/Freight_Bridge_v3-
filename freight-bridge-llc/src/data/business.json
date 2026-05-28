@@ -1,0 +1,41 @@
+{
+  "id": "freight-bridge-llc",
+  "name": "Freight Bridge LLC",
+  "tagline": "Bridging Businesses to Their Customers",
+  "phone": "(641) 451-3132",
+  "email": "info@freightbridgellc.com",
+  "domain": "https://freightbridgellc.com",
+  "owner": "Mohamed Soliman",
+  "slogan": "Moving & Freight Hauling — Done Right",
+  "description": "Freight Bridge LLC is a trusted moving and freight hauling company based in Iowa City, Iowa. As an authorized interstate carrier (USDOT 4414774, MC-1734786), we handle residential and commercial moves, haul freight in all 50 states for brokers and dispatchers with our own truck, and provide post-construction hauling for data center projects in the Iowa City and Cedar Rapids corridor. Our experienced team is hands-on with every job.",
+  "address": {
+    "street": "Iowa City",
+    "city": "Iowa City",
+    "state": "IA",
+    "stateFullName": "Iowa",
+    "zip": "52245",
+    "country": "US"
+  },
+  "geo": { "latitude": 41.6611, "longitude": -91.5302 },
+  "hours": {
+    "weekday": { "days": ["Mon", "Tue", "Wed", "Thu", "Fri"], "opens": "08:00", "closes": "18:00" },
+    "sunday": { "days": ["Sun"], "opens": "00:00", "closes": "00:00" },
+    "displayText": "Mon-Fri 8AM-6PM | Sat by appointment | Sun closed"
+  },
+  "yearEstablished": "2020",
+  "copyrightYears": "2023-2026",
+  "paymentAccepted": "Credit Card, Wire Transfer, ACH, Invoice (Net 30)",
+  "mapsUrl": "https://maps.google.com/?q=Iowa+City+IA+52245",
+  "directionsUrl": "https://maps.google.com/dir/?q=Iowa+City+IA+52245",
+  "sameAs": [],
+  "brand": {
+    "primaryColor": "#2563eb",
+    "accentColor": "#1e40af",
+    "bgColor": "#ffffff",
+    "secondaryColor": "#1e3a8a",
+    "textColor": "#111827",
+    "logoFilename": "freight-bridge-high-resolution-logo.png",
+    "logoAlt": "Freight Bridge LLC Logo"
+  },
+  "analytics": { "gaId": "G-PLACEHOLDER" }
+}

@@ -1,0 +1,89 @@
+---
+import Base from '@engine/layouts/Base.astro';
+import { getEntry, getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const locations = await getCollection('locations');
+  return locations.map((location) => ({
+    params: { slug: location.data.slug },
+    props: { location: location.data },
+  }));
+}
+
+const { location } = Astro.props;
+const businessEntry = await getEntry('business', 'biz');
+const business = businessEntry?.data;
+
+const services = await getCollection('services');
+const offered = services.filter((s) => location.servicesOffered.includes(s.data.slug));
+---
+
+<Base title={location.seo.title} description={location.seo.description}>
+  <section class="hero">
+    <span class="badge">{location.city}, {location.state}</span>
+    <h1>Moving & Freight Hauling in {location.city}</h1>
+    <p class="subtitle">{location.seo.description}</p>
+    <a href="/contact" class="cta-btn">Get a Quote</a>
+  </section>
+
+  <section class="services">
+    <h2>Services in {location.city}</h2>
+    <div class="service-grid">
+      {offered.map((service) => (
+        <a href={`/services/${service.data.slug}`} class="service-card">
+          <h3>{service.data.name}</h3>
+          <p>{service.data.description}</p>
+          <span class="learn-more">Learn More →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Need a mover or hauler in {location.city}?</h2>
+    <p>Call {business?.name} and talk to our team directly — no call centers, no middlemen.</p>
+    <div class="cta-buttons">
+      <a href="/contact" class="cta-btn primary">Request a Quote</a>
+      <a href={`tel:${business?.phone}`} class="cta-btn secondary">Call {business?.phone}</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero { padding: 4rem 0 2rem; text-align: center; }
+  .badge {
+    display: inline-block; background: #2563eb; color: white;
+    font-size: 0.8rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.05em; padding: 0.375rem 1rem; border-radius: 1rem; margin-bottom: 1rem;
+  }
+  h1 { font-size: 2.5rem; margin: 0 0 1rem; color: #1e3a8a; }
+  .subtitle { max-width: 42rem; margin: 0 auto 2rem; color: #374151; line-height: 1.7; font-size: 1.1rem; }
+  h2 { font-size: 1.75rem; color: #111827; margin: 0 0 1.5rem; }
+
+  .services { padding: 3rem 0; }
+  .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+  .service-card {
+    display: block; padding: 2rem; border: 1px solid #e5e7eb; border-radius: 0.75rem;
+    text-decoration: none; color: inherit; transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .service-card:hover { border-color: #2563eb; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1); }
+  .service-card h3 { font-size: 1.25rem; margin: 0 0 0.75rem; color: #1e3a8a; }
+  .service-card p { color: #6b7280; line-height: 1.6; margin: 0 0 1rem; font-size: 0.95rem; }
+  .learn-more { color: #2563eb; font-weight: 600; font-size: 0.9rem; }
+
+  .cta-btn {
+    display: inline-block; background: #2563eb; color: white; padding: 0.75rem 2rem;
+    border-radius: 0.5rem; text-decoration: none; font-weight: 600;
+  }
+  .cta-btn:hover { background: #1e40af; }
+
+  .cta-section {
+    text-align: center; padding: 3rem 2rem; background: #1e3a8a; color: white;
+    border-radius: 1rem; margin: 2rem 0;
+  }
+  .cta-section h2 { color: white; }
+  .cta-section p { opacity: 0.9; margin: 0 0 1.5rem; font-size: 1.1rem; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .cta-btn.primary { background: #2563eb; color: white; }
+  .cta-btn.secondary { background: transparent; color: white; border: 2px solid white; }
+</style>

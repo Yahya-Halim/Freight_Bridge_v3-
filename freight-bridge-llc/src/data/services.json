@@ -1,0 +1,61 @@
+[
+  {
+    "slug": "residential-moving",
+    "name": "Residential & Furniture Moving",
+    "description": "Full-service home and apartment moving with careful furniture handling, loading, and transport. From a single piece of furniture to a whole household, our team packs, loads, hauls, and places your belongings — local moves around Iowa City or long-distance interstate moves under our USDOT/MC authority.",
+    "icon": "truck",
+    "faqs": [
+      { "question": "Do you handle long-distance and interstate moves?", "answer": "Yes. Freight Bridge LLC is an authorized interstate carrier (USDOT 4414774, MC-1734786), so we can legally move your household across state lines, not just locally around Iowa City." },
+      { "question": "Can you move just a few large items instead of a whole house?", "answer": "Absolutely. We handle single-item and partial moves — a couch, an appliance, a few rooms of furniture — as well as full-household relocations." },
+      { "question": "Do you provide packing and loading?", "answer": "Yes. We load, secure, transport, and unload. Let us know if you'd like help packing boxes or just the heavy lifting and transport." }
+    ],
+    "crossLinks": [
+      { "slug": "commercial-moving", "anchor": "Commercial & Office Moving", "context": "related" },
+      { "slug": "freight-hauling", "anchor": "Nationwide Freight Hauling", "context": "related" }
+    ],
+    "seo": {
+      "title": "Residential & Furniture Moving | Freight Bridge LLC",
+      "description": "Trusted home, apartment, and furniture moving in Iowa City with licensed interstate service. Careful loading, hauling, and placement by an experienced team. Get a quote today.",
+      "canonical": "https://freightbridgellc.com/services/residential-moving"
+    }
+  },
+  {
+    "slug": "commercial-moving",
+    "name": "Commercial & Office Moving",
+    "description": "Business relocations handled with minimal downtime. We move office furniture, equipment, inventory, and fixtures — coordinating around your schedule so your operation is back up and running fast. Local and interstate commercial moves welcome.",
+    "icon": "building",
+    "faqs": [
+      { "question": "Can you move our office after hours or on weekends?", "answer": "Yes. We schedule commercial moves around your business hours to minimize downtime, including evenings and weekends by arrangement." },
+      { "question": "Do you move heavy office equipment?", "answer": "We handle desks, filing systems, shelving, and standard office equipment. Tell us about any specialty or oversized items so we can plan the right approach." }
+    ],
+    "crossLinks": [
+      { "slug": "residential-moving", "anchor": "Residential & Furniture Moving", "context": "related" },
+      { "slug": "freight-hauling", "anchor": "Nationwide Freight Hauling", "context": "related" }
+    ],
+    "seo": {
+      "title": "Commercial & Office Moving | Freight Bridge LLC",
+      "description": "Office and business relocation in Iowa City and interstate, scheduled around your hours to minimize downtime. Handled by a careful, professional crew. Request a quote.",
+      "canonical": "https://freightbridgellc.com/services/commercial-moving"
+    }
+  },
+  {
+    "slug": "freight-hauling",
+    "name": "Nationwide Freight Hauling",
+    "description": "We run our own truck coast to coast, hauling loads in all 50 states. Freight Bridge LLC picks up freight booked through brokers and dispatchers and delivers it safely and on time under our authorized interstate carrier authority (USDOT 4414774, MC-1734786). Reliable capacity, clear communication, and on-time delivery on every lane.",
+    "icon": "truck-fast",
+    "faqs": [
+      { "question": "Where do you haul to?", "answer": "All 50 states. As an authorized interstate carrier, we run nationwide lanes and go wherever the load needs to go." },
+      { "question": "Do you take loads from brokers and dispatchers?", "answer": "Yes. We work directly with freight brokers and dispatch services — send us your load details and we'll cover it with our own truck." },
+      { "question": "What kind of freight do you haul?", "answer": "We handle standard over-the-road freight. Share the commodity, weight, and lane and we'll confirm whether it's a fit for our equipment." }
+    ],
+    "crossLinks": [
+      { "slug": "residential-moving", "anchor": "Residential & Furniture Moving", "context": "related" },
+      { "slug": "commercial-moving", "anchor": "Commercial & Office Moving", "context": "related" }
+    ],
+    "seo": {
+      "title": "Nationwide Freight Hauling | Freight Bridge LLC",
+      "description": "Freight Bridge LLC hauls loads in all 50 states with our own truck, covering freight from brokers and dispatchers. Authorized interstate carrier. Book your lane today.",
+      "canonical": "https://freightbridgellc.com/services/freight-hauling"
+    }
+  }
+]

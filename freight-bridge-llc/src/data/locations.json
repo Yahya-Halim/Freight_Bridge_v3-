@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "iowa-city",
+    "city": "Iowa City",
+    "state": "Iowa",
+    "geo": { "latitude": 41.6611, "longitude": -91.5302 },
+    "servicesOffered": ["residential-moving", "commercial-moving", "freight-hauling"],
+    "seo": {
+      "title": "Movers & Freight Hauling in Iowa City | Freight Bridge LLC",
+      "description": "Freight Bridge LLC is based in Iowa City, Iowa — residential and commercial moving, nationwide freight hauling, and post-construction hauling from a team you can trust.",
+      "canonical": "https://freightbridgellc.com/locations/iowa-city"
+    }
+  },
+  {
+    "slug": "coralville",
+    "city": "Coralville",
+    "state": "Iowa",
+    "geo": { "latitude": 41.6764, "longitude": -91.5805 },
+    "servicesOffered": ["residential-moving", "commercial-moving"],
+    "seo": {
+      "title": "Movers in Coralville, Iowa | Freight Bridge LLC",
+      "description": "Home, apartment, and office moving in Coralville, Iowa. Local and interstate moves handled hands-on by Freight Bridge LLC. Request a quote today.",
+      "canonical": "https://freightbridgellc.com/locations/coralville"
+    }
+  },
+  {
+    "slug": "north-liberty",
+    "city": "North Liberty",
+    "state": "Iowa",
+    "geo": { "latitude": 41.7491, "longitude": -91.5977 },
+    "servicesOffered": ["residential-moving", "commercial-moving"],
+    "seo": {
+      "title": "Movers in North Liberty, Iowa | Freight Bridge LLC",
+      "description": "Residential and commercial moving in North Liberty, Iowa, with careful furniture handling and interstate service. Get a free quote from Freight Bridge LLC.",
+      "canonical": "https://freightbridgellc.com/locations/north-liberty"
+    }
+  },
+  {
+    "slug": "cedar-rapids",
+    "city": "Cedar Rapids",
+    "state": "Iowa",
+    "geo": { "latitude": 41.9779, "longitude": -91.6656 },
+    "servicesOffered": ["residential-moving", "commercial-moving", "freight-hauling"],
+    "seo": {
+      "title": "Movers & Freight Hauling in Cedar Rapids | Freight Bridge LLC",
+      "description": "Moving and nationwide freight hauling serving Cedar Rapids, Iowa and the I-380 corridor. From the Freight Bridge LLC team. Request a quote today.",
+      "canonical": "https://freightbridgellc.com/locations/cedar-rapids"
+    }
+  }
+]

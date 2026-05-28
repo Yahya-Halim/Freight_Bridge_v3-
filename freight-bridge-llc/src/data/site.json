@@ -1,0 +1,24 @@
+{
+  "id": "freight-bridge-site",
+  "nav": [
+    { "label": "Home", "href": "/" },
+    { "label": "About", "href": "/about" },
+    { "label": "Services", "href": "/services" },
+    { "label": "Service Areas", "href": "/locations" },
+    { "label": "Contact", "href": "/contact" }
+  ],
+  "footer": {
+    "links": [
+      { "label": "About Us", "href": "/about" },
+      { "label": "Services", "href": "/services" },
+      { "label": "Locations", "href": "/locations" },
+      { "label": "Contact", "href": "/contact" }
+    ],
+    "copyrightText": "© 2023-2026 Freight Bridge LLC. All rights reserved."
+  },
+  "schemaMap": {
+    "@type": "MovingCompany",
+    "priceRange": "$$"
+  },
+  "cta": { "text": "Get a Quote", "href": "/contact" }
+}
