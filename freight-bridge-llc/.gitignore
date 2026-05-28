@@ -4,8 +4,3 @@ dist/
 .factory/
 .DS_Store
 *.log
-
-# env / secrets
-.env
-.env.local
-.env.*.local
